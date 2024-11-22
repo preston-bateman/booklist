@@ -16,6 +16,13 @@ function App() {
     setBooks(updateBooks)
   }
 
+  const deleteBookById = (id) => {
+    const updateBooks = books.filter((book) => {
+      return book.id !== id
+    })
+    setBooks(updateBooks)
+  }
+
   return (
     <div className="app">
       <h1>Reading List</h1>
