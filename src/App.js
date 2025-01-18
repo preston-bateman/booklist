@@ -47,4 +47,4 @@ function App() {
 export default App;
 
 
-//adding in the note to put in the new server integrations in
+//adding in the note to put in the new server integrations.
