@@ -1,19 +1,22 @@
 import { useState } from "react";
 import BookCreate from "./components/BookCreate";
 import BookList from "./components/BookList";
-import { v4 as uuidv4 } from 'uuid';
+import axios from "axios";
 
 
 function App() {
   const [books, setBooks] = useState([])
 
-  const createBook = (title) => {
-    const uniqueId = uuidv4()
-    const updateBooks = [
-      ...books,
-      { id: uniqueId, title }
-    ]
-    setBooks(updateBooks)
+  const createBook = async (title) => {
+    await axios.post('http://localhost:3001/books', {
+      title
+    })
+
+    // const updateBooks = [
+    //   ...books,
+    //   { id: uniqueId, title }
+    // ]
+    // setBooks(updateBooks)
   }
 
   const deleteBookById = (id) => {
